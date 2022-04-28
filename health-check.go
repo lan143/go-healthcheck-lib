@@ -71,6 +71,10 @@ func (healthCheck *HealthCheck) Run(ctx context.Context) {
 	}()
 }
 
+func (healthCheck *HealthCheck) IsReady() bool {
+	return healthCheck.isReady
+}
+
 func (healthCheck *HealthCheck) runReadinessProbes() {
 	for {
 		isReady := true
